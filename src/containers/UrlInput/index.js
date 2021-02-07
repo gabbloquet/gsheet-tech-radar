@@ -1,9 +1,6 @@
-import React, {useContext} from 'react';
-import {TechRadarContext} from "../../App";
+import React from 'react';
 
-const GsheetUrlInput = () => {
-
-  const {setUrl} = useContext(TechRadarContext);
+const UrlInput = ({label, setUrl}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,7 +10,7 @@ const GsheetUrlInput = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor='url'>
-        Google sheet URL
+        {label}
         <input type="url" name="url" />
       </label>
       <input type="submit" value="Envoyer" />
@@ -21,4 +18,4 @@ const GsheetUrlInput = () => {
   );
 };
 
-export default GsheetUrlInput;
+export default UrlInput;

@@ -1,5 +1,6 @@
 import React, {createContext, useState} from 'react';
-import GsheetUrlInput from "./containers/GsheetUrlInput";
+import UrlInput from "./containers/UrlInput";
+import TechRadar from "./containers/TechRadar";
 import './App.css';
 
 export const TechRadarContext = createContext({});
@@ -11,10 +12,10 @@ function App() {
     <TechRadarContext.Provider  value={{url, setUrl}} className="App">
       <header className="tech-radar-header">
         <h1>React + Google sheet : Tech Radar</h1>
-        <GsheetUrlInput />
+        <UrlInput label='Google sheet URL' setUrl={setUrl}/>
       </header>
       <section className='tech-radar-section'>
-
+        <TechRadar />
       </section>
     </TechRadarContext.Provider>
   );
