@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React, {createContext, useState} from 'react';
+import GsheetUrlInput from "./containers/GsheetUrlInput";
 import './App.css';
 
+export const TechRadarContext = createContext({});
+
 function App() {
+  const [url, setUrl] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <TechRadarContext.Provider  value={{url, setUrl}} className="App">
+      <header className="tech-radar-header">
+        <h1>React + Google sheet : Tech Radar</h1>
+        <GsheetUrlInput />
       </header>
-    </div>
+      <section className='tech-radar-section'>
+
+      </section>
+    </TechRadarContext.Provider>
   );
 }
 
